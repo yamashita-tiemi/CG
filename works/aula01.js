@@ -8,7 +8,7 @@ import {initRenderer,
         onWindowResize,
         createGroundPlaneXZ} from "../libs/util/util.js";
 
-let scene, renderer, camera, material, light, orbit; // variables 
+let scene, renderer, camera, material, light, orbit; // Initial variables
 scene = new THREE.Scene();    // Create main scene
 renderer = initRenderer();    // Init a basic renderer
 camera = initCamera(new THREE.Vector3(0, 15, 30)); // Init camera in this position
@@ -28,12 +28,28 @@ let plane = createGroundPlaneXZ(20, 20)
 scene.add(plane);
 
 // create a cube
-let cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
-let cube = new THREE.Mesh(cubeGeometry, material);
+let cubeGeometry1 = new THREE.BoxGeometry(8, 8, 8);
+let cube1 = new THREE.Mesh(cubeGeometry1, material);
 // position the cube
-cube.position.set(0.0, 2.0, 0.0);
+cube1.position.set(0.0, 4.0, 0.0);
+// add the cube to the scene    
+scene.add(cube1);
+
+// create a cube
+let cubeGeometry2 = new THREE.BoxGeometry(4, 4, 4);
+let cube2 = new THREE.Mesh(cubeGeometry2, material);
+// position the cube
+cube2.position.set(0.0, 12.0, 0.0);
 // add the cube to the scene
-scene.add(cube);
+scene.add(cube2);
+
+// create a cube
+let cubeGeometry3 = new THREE.BoxGeometry(2, 2, 2);
+let cube3 = new THREE.Mesh(cubeGeometry3, material);
+// position the cube
+cube3.position.set(0.0, 18.0, 0.0);
+// add the cube to the scene
+scene.add(cube3);
 
 // Use this to show information onscreen
 let controls = new InfoBox();
